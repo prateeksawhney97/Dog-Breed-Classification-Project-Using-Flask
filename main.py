@@ -29,11 +29,7 @@ import glob
 import tensorflow as tf
 from keras.models import load_model
 from random import randint
-'''
-dog_names=[]
-with open('saved_models/dog_names.json') as json_file:
-    dog_names = json.load(json_file)
-'''
+
 ResNet50_model = ResNet50(weights='imagenet')
 
 #define generic function for pre-processing images into 4d tensor as input for CNN
@@ -95,7 +91,7 @@ def predict_image(img_path, model):
     else:
         return "No human or dog could be detected, please provide another picture."
 
-'''
+
 def instantiate_model():
     #build model
     global model
@@ -118,35 +114,12 @@ def instantiate_model():
     model = Resnet_Model
 
 
-def instantiate_model():
-    #build model
-    global model
-    #load features
-    bottleneck_features = np.load('bottleneck_features/DogResnet50Data.npz')
-    train_Resnet = bottleneck_features['train']
-    valid_Resnet = bottleneck_features['valid']
-    test_Resnet = bottleneck_features['test']
-    #read model from disk
-    json_file = open('saved_models/model.json', 'r')
-    loaded_model_json = json_file.read()
-    json_file.close()
-    loaded_model = model_from_json(loaded_model_json)
-    # load weights into saved model
-    loaded_model.load_weights("weights.best.Resnet.hdf5")
-    print("Loaded model from disk")
-    # compile model
-    loaded_model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
-    model=loaded_model
-    global graph
-    graph = tf.get_default_graph()
-
-'''
 
 height = 224
 width = 224
 dim = (width, height)
 
-#instantiate_model()
+instantiate_model()
 
 IMAGE_FOLDER = 'static/'
 #PROCESSED_FOLDER = 'processed/'
@@ -168,80 +141,7 @@ def success():
 		image_ext = cv2.imread(full_filename)
 		img_path = full_filename
 		
-		#initial_image = np.copy(image_ext)
-		#imag = cv2.resize(initial_image, dim, interpolation = cv2.INTER_AREA)
-		#after_resizing = "processed_imag.jpg"
-		#cv2.imwrite(os.path.join(app.config['UPLOAD_FOLDER'], after_resizing), imag)
-		
-		#full_filename_after_resizing = os.path.join(app.config['UPLOAD_FOLDER'], after_resizing)
-		#imag = np.expand_dims(imag, axis=0)
-		#pred = model.predict(imag)
-
-
-		'''
-		global model
-		bottleneck_features = np.load('bottleneck_features/DogResnet50Data.npz')
-		train_Resnet = bottleneck_features['train']
-		valid_Resnet = bottleneck_features['valid']
-		test_Resnet = bottleneck_features['test']
-		
-		Resnet_Model = Sequential()
-		Resnet_Model.add(GlobalAveragePooling2D(input_shape=train_Resnet.shape[1:]))
-		Resnet_Model.add(Dense(133,activation='softmax'))
-		Resnet_Model.load_weights("weights.best.Resnet.hdf5")
-		Resnet_Model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-		model = Resnet_Model
-
-		global graph
-		graph = tf.get_default_graph()
-		'''
-		#model = load_model("weights.best.Resnet.hdf5")
-		#model = ResNet50(include_top=False, weights='weights.best.Resnet.hdf5', input_tensor=Input(shape=(224,224,3)))
-		#model = load_model("Final_Model.h5")
-		#model = ResNet50(weights='imagenet')
-		#initial_image = np.copy(image_ext)
-		#imag = cv2.resize(initial_image, dim)
-		#original = imag
-		#original = image.load_img(img_path, target_size=(224, 224))
-		#numpy_image = image.img_to_array(original)
-		#image_batch = np.expand_dims(numpy_image, axis=0)
-		#predicted_vector = Resnet_Model.predict(bottleneck_feature)
-		#dog_names = dog_names[np.argmax(predicted_vector)]
-		#predicted_breed = dog_names.rsplit('.',1)[1].replace("_", " ")
-		#pred = Resnet_Model.predict(image_batch)
-		#print(pred)
-		#vowels=["a","e","i","o","u"]
-    		#show_img(img_path)
-		#if a dog is detected in the image, return the predicted breed.
-		'''
-		global graph
-		global sess
-			
 		with graph.as_default():
-			set_session(sess)
-			result = predict_image(img_path, model)
-		txt = "Hello"
-		'''
-
-		global model
-		global sess
-		sess = tf.Session()
-		set_session(sess)
-		bottleneck_features = np.load('bottleneck_features/DogResnet50Data.npz')
-		train_Resnet = bottleneck_features['train']
-		valid_Resnet = bottleneck_features['valid']
-		test_Resnet = bottleneck_features['test']
-		Resnet_Model = Sequential()
-		Resnet_Model.add(GlobalAveragePooling2D(input_shape=train_Resnet.shape[1:]))
-		Resnet_Model.add(Dense(133,activation='softmax'))
-		Resnet_Model.load_weights("weights.best.Resnet.hdf5")
-		Resnet_Model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-
-		model = Resnet_Model
-		global graph
-		graph = tf.get_default_graph()
-		with graph.as_default():
-			set_session(sess)
 			result = predict_image(img_path, model)
 		final_text = 'Results after Detecting Dog Breed in Input Image'
 		return render_template("success.html", name = final_text, img = full_filename, out_1 = txt)
