@@ -143,6 +143,7 @@ def success():
 		
 		with graph.as_default():
 			result = predict_image(img_path, model)
+                        txt = result
 		final_text = 'Results after Detecting Dog Breed in Input Image'
 		return render_template("success.html", name = final_text, img = full_filename, out_1 = txt)
 		
