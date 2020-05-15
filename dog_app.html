@@ -13505,7 +13505,7 @@ Performance for recognizing faces for dog images :0.11
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">keras.applications.resnet50</span> <span class="k">import</span> <span class="n">ResNet50</span>
@@ -13527,13 +13527,37 @@ Performance for recognizing faces for dog images :0.11
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Downloading data from https://github.com/fchollet/deep-learning-models/releases/download/v0.2/resnet50_weights_tf_dim_ordering_tf_kernels.h5
-102858752/102853048 [==============================] - 1s 0us/step
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Using TensorFlow backend.
 </pre>
 </div>
 </div>
 
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Downloading data from https://github.com/fchollet/deep-learning-models/releases/download/v0.2/resnet50_weights_tf_dim_ordering_tf_kernels.h5
+102858752/102853048 [==============================] - 2s 0us/step
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ResNet50_model</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s1">&#39;ResNet50_model.h5&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
@@ -13801,7 +13825,7 @@ Performance for recognizing dogs in dog images :1.0
 <p>We have imported some Python modules to get you started, but feel free to import as many modules as you need.  If you end up getting stuck, here's a hint that specifies a model that trains relatively fast on CPU and attains &gt;1% test accuracy in 5 epochs:</p>
 <p><img src="images/sample_cnn.png" alt="Sample CNN"></p>
 <p><strong>Question 4:</strong> Outline the steps you took to get to your final CNN architecture and your reasoning at each step.  If you chose to use the hinted architecture above, describe why you think that CNN architecture should work well for the image classification task.</p>
-<p><strong>Answer:</strong></p>
+<p><strong>Answer:</strong> I have used the initial part of the provided CNN architecture but changed the flattening and densing part due to better accuracy. There are 6 layers (convolution and max-pooling) to extract the features of the provided images. If we would deal with more complex features we could also add more layers here. Also, one can increase the epcohs to 50 for more accuracy. But due to performance, I stayed with six. The Flatten layer takes the output from the previous max-pooling layer and converts it to a 1D array as input for the Dense layers. As suggested here: <a href="https://keras.io/getting-started/sequential-model-guide/">https://keras.io/getting-started/sequential-model-guide/</a>, I went with two Dense layers for improve the model accuracy.</p>
 
 </div>
 </div>
@@ -14520,7 +14544,7 @@ test_{network} = bottleneck_features['test']</code></pre>
 
 </code></pre>
 <p><strong>Question 5:</strong> Outline the steps you took to get to your final CNN architecture and your reasoning at each step.  Describe why you think the architecture is suitable for the current problem.</p>
-<p><strong>Answer:</strong></p>
+<p><strong>Answer:</strong> The architecture is suitable because we are getting a very high accuracy from it. From the model, that I developed from scratch using 6 convolutional and 2 dense layers also had an accuracy less than 20% bu greater than 14%. Now, the Resnet50Data is downloaded which is computed by Udacity and used finally. It gives an accuracy of more than 80%.</p>
 
 </div>
 </div>
@@ -14891,7 +14915,7 @@ Epoch 20/20
 <h2 id="Step-7:-Test-Your-Algorithm">Step 7: Test Your Algorithm<a class="anchor-link" href="#Step-7:-Test-Your-Algorithm">&#182;</a></h2><p>In this section, you will take your new algorithm for a spin!  What kind of dog does the algorithm think that <strong>you</strong> look like?  If you have a dog, does it predict your dog's breed accurately?  If you have a cat, does it mistakenly think that your cat is a dog?</p>
 <h3 id="(IMPLEMENTATION)-Test-Your-Algorithm-on-Sample-Images!">(IMPLEMENTATION) Test Your Algorithm on Sample Images!<a class="anchor-link" href="#(IMPLEMENTATION)-Test-Your-Algorithm-on-Sample-Images!">&#182;</a></h3><p>Test your algorithm at least six images on your computer.  Feel free to use any images you like.  Use at least two human and two dog images.</p>
 <p><strong>Question 6:</strong> Is the output better than you expected :) ?  Or worse :( ?  Provide at least three possible points of improvement for your algorithm.</p>
-<p><strong>Answer:</strong></p>
+<p><strong>Answer:</strong> The output is better than I expected :) Also if the human face in the picture has distinct features, the predicted dog race matches very well. However for very close-looking dog races, it still seems to be tricky to get it right. For improving the algorithm, we could: Increase the training data by including more pictures per dog breed. We could include more and deeper layers into our CNN. This would also lead to a decreased performance or require better hardware in order not to slow down processing time. ALso, We could run different CNNs against each other to see which one performs best for this task.</p>
 
 </div>
 </div>
