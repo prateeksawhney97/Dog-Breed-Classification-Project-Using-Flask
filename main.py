@@ -50,7 +50,7 @@ def get_correct_prenom(word, vowels):
     else:
         return "a"
 
-Resnet_Model = load_model("weights.best.Resnet.hdf5")
+Resnet_Model = load_model("Final_Model.h5")
 
 def Resnet_predict_breed(img_path):
     # extract bottleneck features
