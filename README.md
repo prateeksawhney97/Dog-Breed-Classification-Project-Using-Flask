@@ -7,16 +7,16 @@ Dog Breed classifier project of the Data Science Nanodegree by Udacity. A Web Ap
 
 
 ## Libraries Used:
-Python 3.7+
-Keras==2.0.9
-OpenCV
-Matplotlib
-NumPy
-glob
-tqdm
-Scikit-Learn
-Flask
-Tensorflow 2.0
+1. Python 3.7+
+2. Keras==2.0.9
+3. OpenCV
+4. Matplotlib
+5. NumPy
+6. glob
+7. tqdm
+8. Scikit-Learn
+9. Flask
+10. Tensorflow 2.0
 
 ## Project motivation
 The goal of this project is to classify images of dogs according to their breed. When the image of a human is provided, it should recommend the best resembling dog breed. I decided to opt for this project as I found the topic of Deep Neural Networks to be very fascinating and wanted to dive deeper into this with some practical work.
