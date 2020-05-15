@@ -3,6 +3,8 @@
 Dog Breed classifier project of the Data Science Nanodegree by Udacity. A Web Application is developed using Flask through which a user can check if an uploaded image is that of a dog or human. And, the Deep Learning model also distinguishes between the 133 classes of dogs with an accuracy of over 80% with the help of Transfer Learning.
 
 
+![Screenshot from 2020-05-16 01-59-04](https://user-images.githubusercontent.com/34116562/82094678-2a6e3c00-971b-11ea-832b-36620650bff5.png)
+
 
 ## Libraries Used:
 Python 3.7+
