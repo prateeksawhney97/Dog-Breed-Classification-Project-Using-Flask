@@ -15,7 +15,7 @@ import glob
 from keras.models import load_model
 from random import randint
 
-ResNet50_model = load_model()
+ResNet50_model = load_model("ResNet50_model.h5")
 
 def path_to_tensor(img_path):
     # loads RGB image as PIL.Image.Image type
