@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>  
+<head>  
+	<title>success</title>  
+	<style>
+		.center {
+  			display: block;
+  			margin-left: auto;
+  			margin-right: auto;
+		}
+	</style>
+</head>  
+<body style="background-color:#b3ffb3;">  
+	<header>
+		<div style="background-color:rgb(106, 90, 205); border-radius: 10px;">	
+			<div style="background-color:DodgerBlue; margin-top: 50px; height: 100px; border-radius: 10px;">
+				<p style="font-size:40px; text-align: center;">File uploaded successfully and Detected Dog is:</p>  
+			</div>			
+			<p style="font-size:35px; text-align: center;">{{name}}</p>  
+			<!--<img src="{{url_for('success', filename='{{ name }}')}}" align="middle" />-->
+		</div>
+	</header>
+	<div>
+		<div>
+			<p style="font-size:25px; text-align: center;">Your Input Image</p>
+			<img class="center" src="{{ img }}">
+		</div>
+		<div>
+			<p style="font-size:25px; text-align: center;">{{out_1}}</p>
+			
+		</div>
+		<div>
+			<p style="font-size:20px; text-align: center;">{{out_2}}</p>
+			
+		</div>
+		<div>
+			<p style="font-size:20px; text-align: center;">{{out_3}}</p>
+			
+		</div>
+	</div>
+	<div>
+			
+		<form action="https://github.com/prateeksawhney97/Dog-Breed-Classification-Project-Using-Flask">
+		<input style="margin: auto; margin-top: 15px; background-color:DodgerBlue; color: white; padding: 15px 32px; text-align: center; display: block; font-size: 16px; margin-bottom: 15px;" type = "submit" value="GitHub">  
+		<!--<img src="../processed/sample.jpg">-->
+		</form>
+
+		<form action="{{ url_for('info')}}" method="POST">
+		<input style="margin: auto; margin-top: 15px; background-color:DodgerBlue; color: white; padding: 15px 32px; text-align: center; display: block; font-size: 16px; margin-bottom: 15px;" type = "submit" value="Source Code">  
+		<!--<img src="../processed/sample.jpg">-->
+		</form>
+	</div>
+
+</body>  
+</html>  
