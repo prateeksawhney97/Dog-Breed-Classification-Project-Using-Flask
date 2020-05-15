@@ -1,4 +1,5 @@
 from flask import *  
+from extract_bottleneck_features import *
 
 import pandas as pd
 import numpy as np
@@ -11,15 +12,33 @@ import glob
 from keras.models import load_model
 from random import randint
 
+def get_correct_prenom(word, vowels):
+    if word[0].lower() in vowels:
+            return "an"
+    else:
+        return "a"
+
+Resnet_Model = load_model("weights.best.Resnet.hdf5")
+
+def Resnet_predict_breed(img_path):
+    # extract bottleneck features
+    bottleneck_feature = extract_Resnet50(path_to_tensor(img_path))
+    # obtain predicted vector
+    predicted_vector = Resnet_Model.predict(bottleneck_feature)
+    # return dog breed that is predicted by the model
+    return dog_names[np.argmax(predicted_vector)]
+
 height = 224
 width = 224
 dim = (width, height)
 
 
 IMAGE_FOLDER = 'static/'
+PROCESSED_FOLDER = 'processed/'
 
 app = Flask(__name__)  
 app.config['UPLOAD_FOLDER'] = IMAGE_FOLDER
+app.config['PROCESSED_FOLDER'] = PROCESSED_FOLDER
 
 @app.route('/')  
 def upload():
@@ -34,25 +53,31 @@ def success():
 		image_ext = cv2.imread(full_filename)
 		initial_image = np.copy(image_ext)
 		imag = cv2.resize(initial_image, dim, interpolation = cv2.INTER_AREA)
+		after_resizing = "processed_imag.jpg"
+		cv2.imwrite(os.path.join(PROCESSED_FOLDER, after_resizing), imag)
+		#cv2.imwrite(after_resizing, imag)
+		#model = load_model("weights.best.Resnet.hdf5")
+		full_filename_after_resizing = os.path.join(app.config['PROCESSED_FOLDER'], after_resizing)
+		img_path = full_filename_after_resizing
+		#imag = np.expand_dims(imag, axis=0)
+		#pred = model.predict(imag)
+		vowels=["a","e","i","o","u"]
+    		#show_img(img_path)
+		#if a dog is detected in the image, return the predicted breed.
+		if dog_detector(img_path)==True:
+			predicted_breed=Resnet_predict_breed(img_path).rsplit('.',1)[1].replace("_", " ")
+			prenom=get_correct_prenom(predicted_breed,vowels)
+			txt="The predicted dog breed is " + prenom + " "+ str(predicted_breed) + "."
+			#if a human is detected in the image, return the resembling dog breed.
+		if face_detector(img_path)==True:
+			predicted_breed=Resnet_predict_breed(img_path).rsplit('.',1)[1].replace("_", " ")
+			prenom=get_correct_prenom(predicted_breed,vowels)
+			txt="This photo looks like " + prenom + " "+ str(predicted_breed) + "."
+		#if neither is detected in the image, provide output that indicates an error.
+		else:
+			txt="No human or dog could be detected, please provide another picture."
 
-		model = load_model("model.h5")
-		imag = np.expand_dims(imag, axis=0)
-		pred = model.predict(imag)
-		pred_0 = pred[0][0]
-		pred_1 = pred[0][1]
-		pred_2 = pred[0][2]
-		pred_3 = pred[0][3]
-		pred_4 = pred[0][4]
-		value = max(pred_0, pred_1, pred_2, pred_3, pred_4)
-		if(value==pred_0):
-			txt = "Ajoba Temple, Goa"
-			desc = "Located at the entrance of Keri (or Querim) beach in Goa. It is a small temple but quite interesting on the sands of the beach. Keri beach is the northernmost beach of Goa. Thereafter Goa ends and Maharastra starts."
-			made = "A beautiful temple painted in turquoise and orange, located on the shores of Keri beach in Pernem. The much-famed jatra of Ajoba devasthan at Keri-Pernem happens in the first week of February. Devotees from Goa and neighbouring states, throng to the temple to witness this."
-		
-		
-
-			
-		final_text = 'Results after Detecting Monument in Input Image'
+		final_text = 'Results after Detecting Dog Breed in Input Image'
 		return render_template("success.html", name = final_text, img = full_filename, out_1 = txt)
 		
 
