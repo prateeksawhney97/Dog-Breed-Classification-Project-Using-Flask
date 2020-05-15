@@ -1,3 +1,8 @@
+![thumb-1920-22714](https://user-images.githubusercontent.com/34116562/82046427-7c3ca500-96ce-11ea-9a5d-7ff2018854ba.jpg)
+
+![thumb-1920-379691](https://user-images.githubusercontent.com/34116562/82046446-8494e000-96ce-11ea-9957-cf358c318389.jpg)
+
+
 [//]: # (Image References)
 
 [image1]: ./images/sample_dog_output.png "Sample Output"
