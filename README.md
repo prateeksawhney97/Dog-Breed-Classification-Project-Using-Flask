@@ -5,6 +5,15 @@ Dog Breed classifier project of the Data Science Nanodegree by Udacity. A Web Ap
 
 ![Screenshot from 2020-05-16 01-59-04](https://user-images.githubusercontent.com/34116562/82094678-2a6e3c00-971b-11ea-832b-36620650bff5.png)
 
+## Steps Involved:
+Step 0: Import Datasets
+Step 1: Detect Humans
+Step 2: Detect Dogs
+Step 3: Create a CNN to Classify Dog Breeds (from Scratch)
+Step 4: Use a CNN to Classify Dog Breeds (using Transfer Learning)
+Step 5: Create a CNN to Classify Dog Breeds (using Transfer Learning)
+Step 6: Write your Algorithm
+Step 7: Test Your Algorithm
 
 ## Libraries Used:
 1. Python 3.7+
@@ -44,6 +53,19 @@ The task was to develop an algorithm that takes an image as an input, pre-proces
 ## Analysis of the Project:
 
 I decided to use a pre-trained ResNet50 model as this has shown very good results with regard to accuracy for image classification. In the provided classroom environment, my tests showed an a test accuracy of 82.8947%. This was accomplished by 25 epochs which ran very quickly on the provided GPU. Thanks to Udacity! The code in the classroom worked pretty well. What I found difficult, was translating the code into a web app. In the beginning I was getting several errors and identified a different keras version as the root cause of that. Therefore I installed the same version as in the classroom and it worked well afterwards. Also, there were errors with version of tensorflow less than 2.0. Updated tensorflow and all things worked very well.
+
+### Dataset Exploration:
+
+The datasets are provided by Udacity i.e. dog images for training the models and human faces for detector. After loading both the dataset using sklearn, the following conclusions are drawn:
+
+1. There are 133 total dog categories.
+2. There are 8351 total dog images.
+3. There are 6680 training dog images.
+4. There are 835 validation dog images.
+5. There are 836 test dog images.
+6. The are in tota l13233 human images.
+
+
 
 ## Conclusion:
 I was surprised by the good results of the algorithm i.e. Resnet50. Without doing too much fine-tuning, the algorithm was already providing high accuracy and the predictions were mostly correct. An accuracy of over 80%. For human faces it seems easier if the face has distinct features that resembles a certain dog breed. Otherwise, it starts to guess from some features, but the results vary. For higher accuracy, the parameters could be further optimized, maybe also including more layers into the model. Further, number of epochs could be increased to 40 to lower the loss. Also by providing an even bigger training data set, the classification accuracy could be improved further. Another improvement could be made with regard to UI. It might pose some problems when deployed using GCP Or Azure. 
