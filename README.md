@@ -78,3 +78,36 @@ Welsh Springer Spaniel Breed
 
 ## Conclusion:
 I was surprised by the good results of the algorithm i.e. Resnet50. Without doing too much fine-tuning, the algorithm was already providing high accuracy and the predictions were mostly correct. An accuracy of over 80%. For human faces it seems easier if the face has distinct features that resembles a certain dog breed. Otherwise, it starts to guess from some features, but the results vary. For higher accuracy, the parameters could be further optimized, maybe also including more layers into the model. Further, number of epochs could be increased to 40 to lower the loss. Also by providing an even bigger training data set, the classification accuracy could be improved further. Another improvement could be made with regard to UI. It might pose some problems when deployed using GCP Or Azure. 
+
+## Results:
+
+Using the final model, some examples of predictions are shown below. If a photo of a human is uploaded, it tells the closest match.
+
+#### Prediction: This photo looks like an Afghan hound.
+
+![1](https://user-images.githubusercontent.com/34116562/82108536-bc426d00-974c-11ea-9c9e-eea43de57701.png)
+
+#### Prediction: The predicted dog breed is a Brittany.
+
+![2](https://user-images.githubusercontent.com/34116562/82108537-be0c3080-974c-11ea-9d92-f73a314f70f0.png)
+
+#### Prediction: The predicted dog breed is a Boykin spaniel.
+
+![3](https://user-images.githubusercontent.com/34116562/82108538-bfd5f400-974c-11ea-9426-3437ace3342a.png)
+
+#### Prediction: The predicted dog breed is a Curly-coated retriever.
+
+![4](https://user-images.githubusercontent.com/34116562/82108540-c19fb780-974c-11ea-9a01-6ad7f33d98cc.png)
+
+#### Prediction: The predicted dog breed is a Labrador retriever.
+
+![5](https://user-images.githubusercontent.com/34116562/82108545-c5333e80-974c-11ea-9b21-8876e669061b.png)
+
+#### Prediction: The predicted dog breed is a Labrador retriever.
+
+![6](https://user-images.githubusercontent.com/34116562/82108549-c82e2f00-974c-11ea-98dc-4372bde8627d.png)
+
+#### Prediction: The predicted dog breed is a Labrador retriever.
+
+![7](https://user-images.githubusercontent.com/34116562/82108551-ca908900-974c-11ea-938f-8dfd4bb95c17.png)
+
