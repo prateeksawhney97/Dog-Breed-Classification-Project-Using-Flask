@@ -65,6 +65,11 @@ The datasets are provided by Udacity i.e. dog images for training the models and
 5. There are 836 test dog images.
 6. The are in tota l13233 human images.
 
+Human is detected in the following image.
+
+![44](https://user-images.githubusercontent.com/34116562/82108644-89e53f80-974d-11ea-9661-2dd62a57e023.png)
+
+
 Even humans will find it difficult to tell the difference between the two dog classes in some categories. An example is shown below:
 
 ![Brittany_02625](https://user-images.githubusercontent.com/34116562/82108456-1db60c00-974c-11ea-89c9-c4397c8bc57b.jpg)
@@ -74,6 +79,11 @@ Brittany Breed
 ![Welsh_springer_spaniel_08203](https://user-images.githubusercontent.com/34116562/82108457-1f7fcf80-974c-11ea-9d4f-6ec00b36b05c.jpg)
 
 Welsh Springer Spaniel Breed
+
+Also, more distinguishing/challenging categories are shown.
+
+![final](https://user-images.githubusercontent.com/34116562/82108643-88b41280-974d-11ea-86f9-f64ee078518a.png)
+
 
 
 ## Conclusion:
