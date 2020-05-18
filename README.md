@@ -78,7 +78,7 @@ The datasets are provided by Udacity i.e. dog images for training the models and
 3. There are 6680 training dog images.
 4. There are 835 validation dog images.
 5. There are 836 test dog images.
-6. The are in tota l13233 human images.
+6. The are in total 13233 human images.
 
 ### Review:
 
