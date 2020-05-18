@@ -80,14 +80,16 @@ The datasets are provided by Udacity i.e. dog images for training the models and
 5. There are 836 test dog images.
 6. The are in tota l13233 human images.
 
-An example of human detection is provided in the following image:
+### Review:
+
+1. An example of human detection is provided in the following image:
 
 Human is detected in the following image.
 
 ![44](https://user-images.githubusercontent.com/34116562/82108644-89e53f80-974d-11ea-9661-2dd62a57e023.png)
 
 
-Even humans will find it difficult to tell the difference between the two dog classes in some categories. An example is shown below:
+2. Even humans will find it difficult to tell the difference between the two dog classes in some categories. An example is shown below:
 
 ![Brittany_02625](https://user-images.githubusercontent.com/34116562/82108456-1db60c00-974c-11ea-89c9-c4397c8bc57b.jpg)
 
@@ -97,14 +99,13 @@ Brittany Breed
 
 Welsh Springer Spaniel Breed
 
-Also, more distinguishing/challenging categories are shown.
+3. Also, more distinguishing/challenging categories are shown.
 
 ![final](https://user-images.githubusercontent.com/34116562/82108643-88b41280-974d-11ea-86f9-f64ee078518a.png)
 
 
-
 ## Conclusion:
-I was surprised by the good results of the algorithm i.e. Resnet50. Without doing too much fine-tuning, the algorithm was already providing high accuracy and the predictions were mostly correct. An accuracy of over 80%. For human faces it seems easier if the face has distinct features that resembles a certain dog breed. Otherwise, it starts to guess from some features, but the results vary. For higher accuracy, the parameters could be further optimized, maybe also including more layers into the model. Further, number of epochs could be increased to 40 to lower the loss. Also by providing an even bigger training data set, the classification accuracy could be improved further. Another improvement could be made with regard to UI. It might pose some problems when deployed using GCP Or Azure. 
+I was surprised by the good results of the algorithm i.e. Resnet50. Without doing too much fine-tuning, the algorithm was already providing high accuracy and the predictions were mostly correct. An accuracy of over 80%. For human faces it seems easier if the face has distinct features that resembles a certain dog breed. Otherwise, it starts to guess from some features, but the results vary. For higher accuracy, the parameters could be further optimized, maybe also including more layers into the model. Further, number of epochs could be increased to 40 to lower the loss. Also by providing an even bigger training data set, the classification accuracy could be improved further. Another improvement could be made with regard to UI.
 
 ## Results:
 
