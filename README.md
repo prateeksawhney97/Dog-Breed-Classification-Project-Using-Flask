@@ -2,8 +2,19 @@
 
 Dog Breed classifier project of the Data Science Nanodegree by Udacity. A Web Application is developed using Flask through which a user can check if an uploaded image is that of a dog or human. And, the Deep Learning model also distinguishes between the 133 classes of dogs with an accuracy of over 80% with the help of Transfer Learning.
 
+### Home Page
 
-![Screenshot from 2020-05-16 01-59-04](https://user-images.githubusercontent.com/34116562/82094678-2a6e3c00-971b-11ea-832b-36620650bff5.png)
+![Screenshot from 2020-05-18 13-58-50](https://user-images.githubusercontent.com/34116562/82191705-8d74f400-9910-11ea-8404-5026fb1585fe.png)
+
+### Uploading an image of a dog
+
+![Screenshot from 2020-05-18 13-59-01](https://user-images.githubusercontent.com/34116562/82191710-8f3eb780-9910-11ea-9682-885a692ca17f.png)
+
+### Prediction using Deep Learning
+
+![Screenshot from 2020-05-18 13-59-09](https://user-images.githubusercontent.com/34116562/82191739-9c5ba680-9910-11ea-825e-534d121f6b4d.png)
+![Screenshot from 2020-05-18 13-59-13](https://user-images.githubusercontent.com/34116562/82191744-9f569700-9910-11ea-9ca4-1d58e385df62.png)
+
 
 ## Steps Involved:
 Step 0: Import Datasets
@@ -25,7 +36,7 @@ Step 7: Test Your Algorithm
 7. tqdm
 8. Scikit-Learn
 9. Flask
-10. Tensorflow 2.0
+10. Tensorflow
 
 ## Project motivation
 The goal of this project is to classify images of dogs according to their breed. When the image of a human is provided, it should recommend the best resembling dog breed. I decided to opt for this project as I found the topic of Deep Neural Networks to be very fascinating and wanted to dive deeper into this with some practical work.
@@ -120,4 +131,10 @@ Using the final model, some examples of predictions are shown below. If a photo 
 #### Prediction: The predicted dog breed is a Labrador retriever.
 
 ![7](https://user-images.githubusercontent.com/34116562/82108551-ca908900-974c-11ea-938f-8dfd4bb95c17.png)
+
+### Prediction on a sample image
+
+![Screenshot from 2020-05-18 13-59-23](https://user-images.githubusercontent.com/34116562/82191755-a2518780-9910-11ea-9180-bf5c3bd84ccc.png)
+![Screenshot from 2020-05-18 13-59-26](https://user-images.githubusercontent.com/34116562/82191761-a4b3e180-9910-11ea-926b-a57ad42384f9.png)
+
 
