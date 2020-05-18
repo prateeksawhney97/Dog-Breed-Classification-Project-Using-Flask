@@ -17,18 +17,21 @@ Dog Breed classifier project of the Data Science Nanodegree by Udacity. A Web Ap
 
 
 ## Steps Involved:
-Step 0: Import Datasets
-Step 1: Detect Humans
-Step 2: Detect Dogs
-Step 3: Create a CNN to Classify Dog Breeds (from Scratch)
-Step 4: Use a CNN to Classify Dog Breeds (using Transfer Learning)
-Step 5: Create a CNN to Classify Dog Breeds (using Transfer Learning)
-Step 6: Write your Algorithm
-Step 7: Test Your Algorithm
+
+1. Import Datasets
+2. Detect Humans
+3. Detect Dogs
+4. Create a CNN to Classify Dog Breeds (from Scratch)
+5. Use a CNN to Classify Dog Breeds (using Transfer Learning)
+6. Create a CNN to Classify Dog Breeds (using Transfer Learning)
+7. Writing the Pipeline
+8. Testing the Pipeline
+9. Creating a Flask application for the same in which a user can upload an image and see the results.
 
 ## Libraries Used:
+
 1. Python 3.7+
-2. Keras==2.0.9
+2. Keras
 3. OpenCV
 4. Matplotlib
 5. NumPy
@@ -39,15 +42,15 @@ Step 7: Test Your Algorithm
 10. Tensorflow
 
 ## Project motivation
-The goal of this project is to classify images of dogs according to their breed. When the image of a human is provided, it should recommend the best resembling dog breed. I decided to opt for this project as I found the topic of Deep Neural Networks to be very fascinating and wanted to dive deeper into this with some practical work.
+The goal of this project is to classify images of dogs according to their breed. When the image of a human is provided, it recommends the best resembling dog breed. I decided to opt for this project as I found the topic of Deep Neural Networks to be very fascinating and wanted to dive deeper into this with some practical work.
 
 ## Description of repository:
-The repository consists of the Jupyter Notebook files from the Udacity classroom, in both formats: dog_app.html and dog_app.ipynb. All credits for code examples here go to Udacity. Moreover there are files for the web_app developed using Flask and contains all code necessary for running the dog breed classifier app on your local machine.
+The repository consists of the Jupyter Notebook files from the Udacity classroom, in both formats: dog_app.html and dog_app.ipynb. All credits for code examples here go to Udacity. Moreover there are files for the web application developed using Flask and contains all code necessary for running the dog breed classifier app on the local machine.
 
 ## Running the code:
 For running the web app on local machine, following these instructions:
 
-1. Make sure you have all necessary packages installed (if version is specified, then please refer to the one mentioned above for running the code without errors on your machine).
+1. Make sure you have all necessary packages installed.
 2. Git clone this repository
 3. Within command line, cd to the cloned repo, and within the main repository.
 4. Run the following command in the parent directory to run the web application. 
@@ -56,14 +59,15 @@ For running the web app on local machine, following these instructions:
 python main.py
 ```
 
-Go to http://0.0.0.0:8080/ to view the web app and input new pictures of dogs or humans – the app will tell you the resembling dog breed successfully without any errors. The app might give some errors with TensorFlow 1.0+ versions, but it runs smoothly with TensorFlow 2.0.
+Go to http://0.0.0.0:8080/ to view the web app and input new pictures of dogs or humans – the app will tell you the resembling dog breed successfully without any errors.
 
 ## Project Definition:
 The task was to develop an algorithm that takes an image as an input, pre-processes and transforms the image so that it can be fed into a CNN for classifying the breed of the dog. If a human image is uploaded, it should still tell the user what dog breed the human resembles most.
 
 ## Analysis of the Project:
 
-I decided to use a pre-trained ResNet50 model as this has shown very good results with regard to accuracy for image classification. In the provided classroom environment, my tests showed an a test accuracy of 82.8947%. This was accomplished by 25 epochs which ran very quickly on the provided GPU. Thanks to Udacity! The code in the classroom worked pretty well. What I found difficult, was translating the code into a web app. In the beginning I was getting several errors and identified a different keras version as the root cause of that. Therefore I installed the same version as in the classroom and it worked well afterwards. Also, there were errors with version of tensorflow less than 2.0. Updated tensorflow and all things worked very well.
+I decided to use a pre-trained ResNet50 model as this has shown very good results with regard to accuracy for image classification. In the provided classroom environment, my tests showed an a test accuracy of 82.8947%. This was accomplished by 25 epochs which ran very quickly on the provided GPU. Thanks to Udacity! The code in the classroom worked pretty well. What I found difficult, was translating the code into a web app. In the beginning I was getting several errors and identified a different keras version as the root cause of that. Therefore I installed the same version as in the udacity classroom and it worked well afterwards.
+
 
 ### Dataset Exploration:
 
@@ -75,6 +79,8 @@ The datasets are provided by Udacity i.e. dog images for training the models and
 4. There are 835 validation dog images.
 5. There are 836 test dog images.
 6. The are in tota l13233 human images.
+
+An example of human detection is provided in the following image:
 
 Human is detected in the following image.
 
