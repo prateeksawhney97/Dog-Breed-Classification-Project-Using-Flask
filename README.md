@@ -41,7 +41,7 @@ Dog Breed classifier project of the Machine Learning Nanodegree by Udacity. A We
 9. Flask
 10. Tensorflow
 
-## Project motivation
+## Project motivation:
 The goal of this project is to classify images of dogs according to their breed. When the image of a human is provided, it recommends the best resembling dog breed. I decided to opt for this project as I found the topic of Deep Neural Networks to be very fascinating and wanted to dive deeper into this with some practical work.
 
 ## Description of repository:
