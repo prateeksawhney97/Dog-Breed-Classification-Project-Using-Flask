@@ -22,7 +22,7 @@ from keras.layers import Input, Conv2D, MaxPooling2D, GlobalAveragePooling2D, Fl
 from keras.layers.convolutional import Convolution2D, Conv2D
 from keras.layers.pooling import MaxPooling2D
 from keras.optimizers import Adam
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 from random import randint
 
